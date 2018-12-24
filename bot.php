@@ -48,6 +48,7 @@ $result = curl_exec($curl);
 $info   = curl_getinfo($curl);
 curl_close($curl);
 $jres   = json_decode($result, true);
+var_dump($jres);
 $http   = $info["http_code"];
 $user   = $jres["user"]["nickname"];
 $email  = $jres["user"]["email"];
@@ -60,6 +61,7 @@ if ($http == "200") {
     echo $putih . "Kết Nối: " . $red . "Thất Bại !" . $t . $putih . " | Thông Điệp: " . $kuning . "Sai Mã Token Vui Lòng Coppy Lại Thật Chính Xác" . $t;
     exit;
 }
+exit;
 $ch    = curl_init();
 $lpoin = "https://www.veeuapp.com/v1.0/incentive/point?access_token=" . $access_token . "&timezone=GMT%2B07%3A00&locale=in_ID";
 curl_setopt($ch, CURLOPT_URL, $lpoin);
