@@ -48,7 +48,7 @@ $result = curl_exec($curl);
 $info   = curl_getinfo($curl);
 curl_close($curl);
 $jres   = json_decode($result, true);
-var_dump($jres);
+var_dump($result);
 $http   = $info["http_code"];
 $user   = $jres["user"]["nickname"];
 $email  = $jres["user"]["email"];
