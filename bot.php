@@ -37,6 +37,8 @@ require("config.php");
 echo $kuning . "[>] $putih Bạn Đang Sở Hữu Tool Veeu Bản Hoàn Chỉnh\n";
 sleep(1);
 $curl = curl_init();
+echo $access_token;
+var_dump($head);
 curl_setopt_array($curl, array(
     CURLOPT_URL => "https://www.veeuapp.com/v1.0/me?access_token=" . $access_token,
     CURLOPT_RETURNTRANSFER => 1,
@@ -45,10 +47,11 @@ curl_setopt_array($curl, array(
     CURLOPT_SSL_VERIFYPEER => 0
 ));
 $result = curl_exec($curl);
+echo $result;
 $info   = curl_getinfo($curl);
 curl_close($curl);
 $jres   = json_decode($result, true);
-var_dump($result);
+var_dump($jres);
 $http   = $info["http_code"];
 $user   = $jres["user"]["nickname"];
 $email  = $jres["user"]["email"];
