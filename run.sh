@@ -8,4 +8,4 @@ cat > "/data/data/com.termux/files/home/tve1/config.php" <<END
 \$access_token = "$token";
 END
 
-#php ~/tve1/bot.php
+php ~/tve1/bot.php
