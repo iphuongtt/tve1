@@ -9,6 +9,8 @@ $red    = "[1;31m";
 $kuning = "[1;33m";
 $t      = "\n";
 
+$access_token="440d99cc-ed0b-4685-ab07-c9c93b128897";
+
 print $ijo . "\n__     _______ _____ _   _ \n\ \\   / / ____| ____| | | | " . $putih . "Phiên Bản: NEW" . $ijo . "\n \ \ / /|  _| |  _| | | | | " . $putih . "TOOL VIP" . $ijo . "\n  \ V / | |___| |___| |_| | " . $putih . "X3 Coin" . $ijo . "\n   \\_/  |_____|_____|\\___/ " . $t;
 echo $putih . "Bản Quyền: Group INDONESIA | Chỉnh sửa Phươngtt" . $t . $t;
 $link    = "https://www.veeuapp.com/v1.0/incentive/tasks?access_token=" . $access_token;
@@ -21,6 +23,9 @@ $video = array(
 $body0    = json_encode($video, true);
 $head     = array();
 $head[]   = "Host: www.veeuapp.com";
+$head[]   = "Connection: Keep-Alive";
+$head[]   = "Accept-Encoding: gzip";
+$head[]   = "User-Agent: okhttp/3.10.0";
 $header   = array();
 $header[] = "Content-Type: application/json";
 $header[] = "charset=UTF-8";
@@ -45,6 +50,9 @@ curl_setopt_array($curl, array(
 ));
 $result = curl_exec($curl);
 echo $result;
+echo '----------';
+echo gzuncompress($result);
+
 $info   = curl_getinfo($curl);
 curl_close($curl);
 $jres   = json_decode($result, true);
