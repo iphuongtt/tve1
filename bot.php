@@ -50,7 +50,6 @@ echo $result;
 $info   = curl_getinfo($curl);
 curl_close($curl);
 $jres   = json_decode($result, true);
-var_dump($jres);
 $http   = $info["http_code"];
 $user   = $jres["user"]["nickname"];
 $email  = $jres["user"]["email"];
@@ -101,7 +100,7 @@ while (true) {
 		CURLOPT_POST           => true,
 		CURLOPT_POSTFIELDS     => $body0,
 		CURLOPT_HTTPHEADER     => $header,
-		CURLOPT_ENCODING       =>"gzip"
+		CURLOPT_ENCODING       =>"gzip",
 		CURLOPT_SSL_VERIFYPEER => 0
     ));
 	$result_video   = curl_exec($curl);
