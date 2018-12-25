@@ -24,7 +24,6 @@ $body0    = json_encode($video, true);
 $head     = array();
 $head[]   = "Host: www.veeuapp.com";
 $head[]   = "Connection: Keep-Alive";
-$head[]   = "Accept-Encoding: gzip";
 $head[]   = "User-Agent: okhttp/3.10.0";
 $header   = array();
 $header[] = "Content-Type: application/json";
