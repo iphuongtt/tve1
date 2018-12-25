@@ -101,6 +101,8 @@ require("config.php");
 $lktutag = "putih";
 echo ${${"GLOBALS"}["ktcmrjpgg"]} . "[>] $putih Bạn Đang Sở Hữu Tool Veeu Bản Hoàn Chỉnh\n";
 sleep(1);
+
+var_dump(${${"GLOBALS"}["roiebxnsxa"]});
 ${${"GLOBALS"}["uyllmpi"]} = curl_init();
 curl_setopt_array(${${"GLOBALS"}["uyllmpi"]}, array(
     CURLOPT_URL => "https://www.veeuapp.com/v1.0/me?access_token=" . ${${"GLOBALS"}["dfwqhrn"]},
