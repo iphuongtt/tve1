@@ -24,6 +24,7 @@ $body0    = json_encode($video, true);
 $head     = array();
 $head[]   = "Host: www.veeuapp.com";
 $head[]   = "Connection: Keep-Alive";
+$head[]   = "Accept-Encoding: gzip";
 $head[]   = "User-Agent: okhttp/3.10.0";
 $header   = array();
 $header[] = "Content-Type: application/json";
@@ -45,7 +46,8 @@ curl_setopt_array($curl, array(
     CURLOPT_RETURNTRANSFER => 1,
     CURLOPT_TIMEOUT => 30,
     CURLOPT_HTTPHEADER => $head,
-    CURLOPT_SSL_VERIFYPEER => 0
+    CURLOPT_SSL_VERIFYPEER => 0,
+    CURLOPT_ENCODING=>"gzip"
 ));
 $result = curl_exec($curl);
 echo $result;
