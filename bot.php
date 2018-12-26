@@ -45,7 +45,6 @@ curl_setopt_array($curl, array(
 	CURLOPT_ENCODING       =>"gzip"
 ));
 $result = curl_exec($curl);
-echo $result;
 $info   = curl_getinfo($curl);
 curl_close($curl);
 $jres   = json_decode($result, true);
@@ -103,24 +102,22 @@ while (true) {
 		CURLOPT_SSL_VERIFYPEER => 0
     ));
 	$result_video   = curl_exec($curl);
-	var_dump($result_video);
 	$vinfo = curl_getinfo($curl);
     curl_close($curl);
 	$jvid   = json_decode($result_video, true);
 	$vhttp  = $vinfo["http_code"];
 	$msg    = $jvid["message"];
-	$rpoin  = $jvid["task"]["reward_point"];
-	$cpoin  = $jvid["point"]["current_point"];
-	$second = $jvid["task"]["extra"]["complete_seconds"];
-	$tpoin  = $jvid["point"]["today_revenue_point"];
     if ($msg == "complete full") {
-        $grfoplfvarq               = "msg";
-        echo $red . "[!] $putih Nghỉ ngơi nhé mai chiến tiếp:$red " . ${$grfoplfvarq} . "$putih\n";
+        echo $red . "[!] $putih Nghỉ ngơi nhé mai chiến tiếp:$red " . $msg . "$putih\n";
         sleep(1);
         break;
     } elseif ($msg == "task invalid") {
         break;
     } elseif ($vhttp == "200") {
+    	$rpoin  = $jvid["task"]["reward_point"];
+		$cpoin  = $jvid["point"]["current_point"];
+		$second = $jvid["task"]["extra"]["complete_seconds"];
+		$tpoin  = $jvid["point"]["today_revenue_point"];
         echo $kuning . "[>] $ijo Thành Công $putih| Tên Tài Khoản: $biru" . $user . $turkis . " | Số Coin Nhận: " . $putih . $cpoin . $ijo . "\n[!] " . $turkis . "Số Coin Nhận: " . $putih . $rpoin . $ijo . " | " . $turkis . "Số Coin Nhận: " . $putih . $tpoin . "\n=================================================\r\n";
     } else {
         sleep(5);

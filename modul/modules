@@ -107,7 +107,6 @@ while (true) {
         CURLOPT_SSL_VERIFYPEER => 0,
     ));
     $resultm = curl_exec($curl);
-    echo $resultm;
     curl_close($curl);
     $jmil = json_decode($resultm, true);
     if ($jmil["message"] == "complete full") {

@@ -40,22 +40,20 @@ while(true){
 	curl_setopt($ch,CURLOPT_POSTFIELDS,$jbody);
 	curl_setopt($ch,CURLOPT_ENCODING,"gzip");
 	$result=curl_exec($ch);
-	var_dump($result);
 	$info=curl_getinfo($ch);
-	var_dump($info);
 	curl_close($ch);
 	$js=json_decode($result,true);
-	$msg=$js["message"];
-	$reward=$js["task"]["reward_point"];
-	$tpoin=$js["point"]["today_revenue_point"];
-	$total=$js["point"]["current_point"];
-	$vip=$js["point"]["vip_level"];
 	$http=$info["http_code"];
 	if($js["code"]=="4040"){
+		$msg=$js["message"];
 		echo $red."[!] ".$putih."Bạn đã xem tất cả video kiếm tiền bây giờ bạn phải vào App Veeu Để Xem Qua 5 Video Nữa Bằng Tay Để Tránh Không Rút Được Tiền: ".$red.$msg.$putih.$t;
 		sleep(1);
 		break;
 	} elseif ($http=="200") {
+		$reward=$js["task"]["reward_point"];
+		$tpoin=$js["point"]["today_revenue_point"];
+		$total=$js["point"]["current_point"];
+		$vip=$js["point"]["vip_level"];
 		echo $putih."====T=r=i=ệ=u==P=h=ú==T=h=ẻ==C=à=o==============➡️Số coin / 1 Video: ".$ijo.$reward.$putih."\n➡️Số Coin Đã Kiểm Được Hôm Nay: ".$ijo.$tpoin.$putih."\n➡️Tổng Số Coin Hiện Tại: ".$turkis.$total.$t;
 		echo $putih."💎Tên Tài Khoản: ".$biru.$user.$putih."\n💎Level Vip Của Bạn: ".$turkis.$vip.${${"GLOBALS"}["rzjprdd"]};
 	} else {
