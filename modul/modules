@@ -58,7 +58,16 @@ while (true) {
     ));
     $resp = curl_exec($curl);
     echo "Điểm danh nhận quà";
-    echo $resp;
+    echo "-------------------------";
+    echo $link;
+    echo "-------------------------";
+    var_dump($resp);
+    echo "-------------------------";
+    var_dump($body);
+    echo "-------------------------";
+    var_dump($header);
+    echo "-------------------------";
+    exit;
     curl_close($curl);
     $json = json_decode($resp, true);
     if ($json["code"] == "4040") {
