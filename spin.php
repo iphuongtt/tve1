@@ -9,7 +9,7 @@ function isRunning() {
 		 [19, 22],
 	];
 	$hour = date('H');
-	echo $hour;
+	echo $hour.'---';
 	$minute = date('i');
 	$found = 0;
 	$min = 100;
