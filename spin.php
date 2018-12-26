@@ -23,6 +23,7 @@ function isRunning() {
 	}
 	$minute2Sleep = ($min - 1)*60 + 60 - $minute;
 	$second2Sleep = $minute2Sleep * 60;
+	echo $minute2Sleep;
 	sleep($second2Sleep);
 	return true;
 }
@@ -104,7 +105,7 @@ $pcode = $pinfo["http_code"];
 if ($pcode == "200") {
     echo $putih . "💰Tổng Coin: " . $ijo . $total . $putih . " Coin Kiếm Hôm Nay (lỗi không hiển thị): " . $ijo . $earn . $t . $t;
 }
-$konfir = readline($putih . "[?] $turkis Viết [y] để đồng ý (y/n): ");
+$konfir = readline("[?] Viết [y] để đồng ý (y/n): ");
 if ($konfir == "y" OR $konfir == "Y") {
     sleep(1);
     echo $kuning . "[>] $putih Cảm Ơn Bạn Đã Dùng Tool Veeu Của Chúng Tôi !!!\n";
