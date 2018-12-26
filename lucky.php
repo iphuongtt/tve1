@@ -1,4 +1,6 @@
 <?php
+require("config.php");
+
 $vdsvvt = "pink";
 $biru   = "[1;34m";
 $turkis = "[1;36m";
@@ -8,7 +10,7 @@ $pink   = "[1;35m";
 $red    = "[1;31m";
 $kuning = "[1;33m";
 $t      = "\n";
-$link    = "https://www.veeuapp.com/v1.0/incentive/tasks?access_token=" . $access_token;
+$link   = "https://www.veeuapp.com/v1.0/incentive/tasks?access_token=" . $access_token;
 $body   = array(
 	"bet_amount"      => "300",
 	"latitude" => 21.031187,
@@ -23,7 +25,7 @@ $header[]   = "Host: www.veeuapp.com";
 $header[]   = "Connection: Keep-Alive";
 $header[]   = "Accept-Encoding: gzip";
 $header[]   = "User-Agent: okhttp/3.10.0";
-require("config.php");
+
 $i=1;
 while ($i < 2) {
 	sleep(1);
