@@ -118,6 +118,8 @@ if ($konfir == "y" OR $konfir == "Y") {
 
 $bet_amount = readline($putih . "[?] $turkis Nhập số coin đặt cược: ");
 
+echo $bet_amount;
+
 $link   = "https://www.veeuapp.com/v1.0/incentive/tasks?access_token=" . $access_token;
 $body   = array(
 	"bet_amount"      => $bet_amount,
