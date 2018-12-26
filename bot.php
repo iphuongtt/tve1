@@ -103,6 +103,7 @@ while (true) {
 		CURLOPT_SSL_VERIFYPEER => 0
     ));
 	$result_video   = curl_exec($curl);
+	var_dump($result_video);
 	$vinfo = curl_getinfo($curl);
     curl_close($curl);
 	$jvid   = json_decode($result_video, true);
