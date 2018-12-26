@@ -4,10 +4,9 @@ require("config.php");
 
 function isRunning() {
 	$times = [
-		 //[4, 12],
-		 [13, 16],
-		 [14, 18],
-		 [19, 21],
+		 [4, 11],
+		 [12, 16],
+		 [19, 22],
 	];
 	$hour = date('H');
 	$minute = date('i');
@@ -117,7 +116,7 @@ if ($konfir == "y" OR $konfir == "Y") {
     exit;
 }
 
-$bet_amount = readline($putih . "[?] $turkis Nhập số coin đặt cược: ");
+$bet_amount = readline("[?] Nhập số coin đặt cược: ");
 
 $link   = "https://www.veeuapp.com/v1.0/incentive/tasks?access_token=" . $access_token;
 $body   = array(
