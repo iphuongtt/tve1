@@ -2,7 +2,7 @@
 
 date_default_timezone_set("Asia/Jakarta");
 
-${${"GLOBALS"}["rzjprdd"]} ="\n";
+$line_break ="\n";
 $r                         ="\n\n";
 $biru                      ="[1;34m";
 $turkis                    ="[1;36m";
@@ -55,7 +55,7 @@ while(true){
 		$total=$js["point"]["current_point"];
 		$vip=$js["point"]["vip_level"];
 		echo $putih."====T=r=i=ệ=u==P=h=ú==T=h=ẻ==C=à=o==============➡️Số coin / 1 Video: ".$ijo.$reward.$putih."\n➡️Số Coin Đã Kiểm Được Hôm Nay: ".$ijo.$tpoin.$putih."\n➡️Tổng Số Coin Hiện Tại: ".$turkis.$total.$t;
-		echo $putih."💎Tên Tài Khoản: ".$biru.$user.$putih."\n💎Level Vip Của Bạn: ".$turkis.$vip.${${"GLOBALS"}["rzjprdd"]};
+		echo $putih."💎Tên Tài Khoản: ".$biru.$user.$putih."\n💎Level Vip Của Bạn: ".$turkis.$vip.$line_break;
 	} else {
 		sleep(5);
 	}
