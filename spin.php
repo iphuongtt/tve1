@@ -150,6 +150,8 @@ while (true) {
 	    ));
 		$result_video   = curl_exec($curl);
 		$vinfo = curl_getinfo($curl);
+	var_dump($result_video);
+	var_dump($vinfo);
 	    curl_close($curl);
 		$result   = json_decode($result_video, true);
 		file_put_contents(time().".log", $result_video);
