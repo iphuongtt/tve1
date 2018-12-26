@@ -24,7 +24,7 @@ $header[]   = "Connection: Keep-Alive";
 $header[]   = "Accept-Encoding: gzip";
 $header[]   = "User-Agent: okhttp/3.10.0";
 require("config.php");
-$i=1
+$i=1;
 while ($i < 2) {
 	sleep(1);
 	$curl        = curl_init();
