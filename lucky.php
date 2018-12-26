@@ -12,7 +12,7 @@ $kuning = "[1;33m";
 $t      = "\n";
 $link   = "https://www.veeuapp.com/v1.0/incentive/tasks?access_token=" . $access_token;
 $body   = array(
-	"bet_amount"      => "300",
+	"bet_amount"      => 300,
 	"latitude" => 21.031187,
 	"locale"          =>"in_ID",
 	"longitude" => 105.78285,
