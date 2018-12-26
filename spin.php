@@ -149,21 +149,22 @@ while (true) {
 			CURLOPT_SSL_VERIFYPEER => 0
 	    ));
 		$result_video   = curl_exec($curl);
-		$vinfo = curl_getinfo($curl);
-	var_dump($result_video);
-	var_dump($vinfo);
+		$info = curl_getinfo($curl);
 	    curl_close($curl);
 		$result   = json_decode($result_video, true);
-		file_put_contents(time().".log", $result_video);
-		$reward_point  = $result['task']['reward_point'];
-		$vip_level     = $result['point']['vip_level'];
-		$current_point = $result['point']['current_point'];
-		$base_point    = $result['task']['base_point'];
-		$task_type     = $result['task']['task_type'];
 
-		echo $putih."=======V=ò=n=g=Q=u=a=y=M=a=y=M=ắ=n=======➡️Reward point: ".$ijo.$reward_point.$putih."\n➡️Base point: ".$base_point."\n➡️Current point: ".$turkis.$current_point.$t;
-		echo $putih."💎Tên Tài Khoản: ".$biru.$user.$putih."\n💎Level Vip Của Bạn: ".$turkis.$vip_level.$t;
+		$code = $info["http_code"];
+	    if ($code == "200") {
+	    	$reward_point  = $result['task']['reward_point'];
+			$vip_level     = $result['point']['vip_level'];
+			$current_point = $result['point']['current_point'];
+			$base_point    = $result['task']['base_point'];
+
+			echo $putih."=======V=ò=n=g=Q=u=a=y=M=a=y=M=ắ=n=======\n➡️ Điểm thưởng: ".$ijo.$reward_point.$putih."\n➡️ Điểm bị trừ: ".$base_point."\n➡️ Tổng điểm: ".($base_point + $reward_point)."\n➡️ Tổng số điểm hiện tại: ".$turkis.$current_point.$t;
+			echo $putih."💎Tên Tài Khoản: ".$biru.$user.$putih."\n💎Level Vip Của Bạn: ".$turkis.$vip_level.$t;    
+	    } else {
+	        echo $red . "Thất Bại ! | " . $putih . "Mã Số: " . $kuning . $code . $t;
+	    }
 		sleep(6);
-		$i++;
 	}
 }
