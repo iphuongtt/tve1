@@ -9,10 +9,12 @@ function isRunning() {
 		 [19, 22],
 	];
 	$hour = date('H');
+	echo $hour;
 	$minute = date('i');
 	$found = 0;
 	$min = 100;
 	foreach ($times as $time) {
+		var_dump($time);
 		if ($hour >= $time[0] && $hour < $time[1]) {
 			return true;
 		} else{
