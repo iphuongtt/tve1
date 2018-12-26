@@ -46,7 +46,7 @@ while ($i < 200) {
     curl_close($curl);
 	$result   = json_decode($result_video, true);
 	file_put_contents(time().".log", $result_video);
-	echo "reward_point: ". $ijo.$result['task']['reward_point'].$putih."\n"
+	echo "reward_point: ". $ijo.$result['task']['reward_point'].$putih."\n";
 	sleep(2);
 	$i++;
 }
