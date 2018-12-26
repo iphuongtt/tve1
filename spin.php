@@ -8,13 +8,11 @@ function isRunning() {
 		 [12, 16],
 		 [19, 22],
 	];
-	$hour = date('H');
-	echo $hour.'---';
-	$minute = date('i');
+	$hour = (int)date('H');
+	$minute = (int)date('i');
 	$found = 0;
 	$min = 100;
 	foreach ($times as $time) {
-		var_dump($time);
 		if ($hour >= $time[0] && $hour < $time[1]) {
 			return true;
 		} else{
@@ -25,7 +23,6 @@ function isRunning() {
 	}
 	$minute2Sleep = ($min - 1)*60 + 60 - $minute;
 	$second2Sleep = $minute2Sleep * 60;
-	echo $minute2Sleep;
 	sleep($second2Sleep);
 	return true;
 }
@@ -118,7 +115,7 @@ if ($konfir == "y" OR $konfir == "Y") {
     echo $red . "[!] " . $putih . "Thất Bại Là Mẹ Thành Công Đừng Nản\n";
     exit;
 }
-
+echo $putih;
 $bet_amount = readline("[?] Nhập số coin đặt cược: ");
 
 $link   = "https://www.veeuapp.com/v1.0/incentive/tasks?access_token=" . $access_token;
