@@ -45,7 +45,7 @@ while ($i < 2) {
 	$vinfo = curl_getinfo($curl);
     curl_close($curl);
 	$result   = json_decode($result_video, true);
-	var_dump($result);
-	var_dump($vinfo);
+	echo $result_video;
+	echo $result['task']['reward_point'];
 	$i++;
 }
