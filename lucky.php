@@ -35,7 +35,7 @@ while ($i < 2) {
 		CURLOPT_URL            => $link,
 		CURLOPT_TIMEOUT        => 30,
 		CURLOPT_POST           => true,
-		CURLOPT_POSTFIELDS     => $body0,
+		CURLOPT_POSTFIELDS     => $body,
 		CURLOPT_HTTPHEADER     => $header,
 		CURLOPT_ENCODING       =>"gzip",
 		CURLOPT_SSL_VERIFYPEER => 0
