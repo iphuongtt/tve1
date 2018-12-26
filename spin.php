@@ -7,7 +7,7 @@ function isRunning() {
 		 [13, 16],
 		 [14, 18],
 		 [19, 21],
-	]
+	];
 	$hour = date('H');
 	$minute = date('i');
 	$found = 0;
