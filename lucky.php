@@ -28,7 +28,7 @@ $header[]   = "Accept-Encoding: gzip";
 $header[]   = "User-Agent: okhttp/3.10.0";
 var_dump($body);
 $i=1;
-while ($i < 2) {
+while ($i < 200) {
 	sleep(1);
 	$curl        = curl_init();
     curl_setopt_array($curl, array(
@@ -45,7 +45,8 @@ while ($i < 2) {
 	$vinfo = curl_getinfo($curl);
     curl_close($curl);
 	$result   = json_decode($result_video, true);
-	echo $result_video;
-	echo $result['task']['reward_point'];
+	file_put_contents(time().".log", $result_video);
+	echo "reward_point: ". $ijo.$result['task']['reward_point'].$putih."\n"
+	sleep(2);
 	$i++;
 }
