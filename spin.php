@@ -118,11 +118,9 @@ if ($konfir == "y" OR $konfir == "Y") {
 
 $bet_amount = readline($putih . "[?] $turkis Nhập số coin đặt cược: ");
 
-echo $bet_amount;
-
 $link   = "https://www.veeuapp.com/v1.0/incentive/tasks?access_token=" . $access_token;
 $body   = array(
-	"bet_amount"      => $bet_amount,
+	"bet_amount"      => (int)$bet_amount,
 	"latitude"        => 21.015408,
 	"locale"          =>"in_ID",
 	"longitude"       => 105.787415,
@@ -136,7 +134,7 @@ $header[]   = "Host: www.veeuapp.com";
 $header[]   = "Connection: Keep-Alive";
 $header[]   = "Accept-Encoding: gzip";
 $header[]   = "User-Agent: okhttp/3.10.0";
-
+var_dump($body);
 while (true) {
 	if (isRunning()) {
 		$curl        = curl_init();
