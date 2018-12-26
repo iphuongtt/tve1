@@ -25,7 +25,7 @@ $header[]   = "Host: www.veeuapp.com";
 $header[]   = "Connection: Keep-Alive";
 $header[]   = "Accept-Encoding: gzip";
 $header[]   = "User-Agent: okhttp/3.10.0";
-
+var_dump($body);
 $i=1;
 while ($i < 2) {
 	sleep(1);
