@@ -1,6 +1,32 @@
 <?php
 require("config.php");
 
+function isRunning() {
+	$times = [
+		 [7, 12],
+		 [13, 16],
+		 [14, 18],
+		 [19, 21],
+	]
+	$hour = date('H');
+	$minute = date('i');
+	$found = 0;
+	$min = 100;
+	foreach ($times as $time) {
+		if ($hour >= $time[0] && $hour < $time[1]) {
+			return true;
+		} else{
+			$delta = $time[0] - $hour;
+			if ($delta < $min)
+				$min = $delta;
+		}
+	}
+	$minute2Sleep = ($min - 1)*60 + 60 - $minute;
+	$second2Sleep = $minute2Sleep * 60;
+	sleep($second2Sleep);
+	return true;
+}
+
 $vdsvvt = "pink";
 $biru   = "[1;34m";
 $turkis = "[1;36m";
@@ -26,27 +52,31 @@ $header[]   = "Host: www.veeuapp.com";
 $header[]   = "Connection: Keep-Alive";
 $header[]   = "Accept-Encoding: gzip";
 $header[]   = "User-Agent: okhttp/3.10.0";
-var_dump($body);
-$i=1;
-while ($i < 200) {
-	sleep(1);
-	$curl        = curl_init();
-    curl_setopt_array($curl, array(
-		CURLOPT_RETURNTRANSFER => 1,
-		CURLOPT_URL            => $link,
-		CURLOPT_TIMEOUT        => 30,
-		CURLOPT_POST           => true,
-		CURLOPT_POSTFIELDS     => $jbody,
-		CURLOPT_HTTPHEADER     => $header,
-		CURLOPT_ENCODING       =>"gzip",
-		CURLOPT_SSL_VERIFYPEER => 0
-    ));
-	$result_video   = curl_exec($curl);
-	$vinfo = curl_getinfo($curl);
-    curl_close($curl);
-	$result   = json_decode($result_video, true);
-	file_put_contents(time().".log", $result_video);
-	echo "reward_point: ". $ijo.$result['task']['reward_point'].$putih."\n";
-	sleep(2);
-	$i++;
+
+while (true) {
+	if (isRunning()) {
+		$curl        = curl_init();
+	    curl_setopt_array($curl, array(
+			CURLOPT_RETURNTRANSFER => 1,
+			CURLOPT_URL            => $link,
+			CURLOPT_TIMEOUT        => 30,
+			CURLOPT_POST           => true,
+			CURLOPT_POSTFIELDS     => $jbody,
+			CURLOPT_HTTPHEADER     => $header,
+			CURLOPT_ENCODING       =>"gzip",
+			CURLOPT_SSL_VERIFYPEER => 0
+	    ));
+		$result_video   = curl_exec($curl);
+		$vinfo = curl_getinfo($curl);
+	    curl_close($curl);
+		$result   = json_decode($result_video, true);
+		file_put_contents(time().".log", $result_video);
+		$reward_point = $result['task']['reward_point'];
+		$vip_level = $result['point']['vip_level'];
+		$current_point = $result['point']['current_point'];
+		$base_point = $result['task']['base_point'];
+		echo "reward_point: ". $ijo.$result['task']['reward_point'].$putih."\n";
+		sleep(2);
+		$i++;
+	}
 }
