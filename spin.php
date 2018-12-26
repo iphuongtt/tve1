@@ -134,7 +134,7 @@ $header[]   = "Host: www.veeuapp.com";
 $header[]   = "Connection: Keep-Alive";
 $header[]   = "Accept-Encoding: gzip";
 $header[]   = "User-Agent: okhttp/3.10.0";
-var_dump($body);
+
 while (true) {
 	if (isRunning()) {
 		$curl        = curl_init();
@@ -159,9 +159,11 @@ while (true) {
 			$vip_level     = $result['point']['vip_level'];
 			$current_point = $result['point']['current_point'];
 			$base_point    = $result['task']['base_point'];
-
-			echo $putih."=======V=ò=n=g=Q=u=a=y=M=a=y=M=ắ=n=======\n➡️ Điểm thưởng: ".$ijo.$reward_point.$putih."\n➡️ Điểm bị trừ: ".$base_point."\n➡️ Tổng điểm: ".($base_point + $reward_point)."\n➡️ Tổng số điểm hiện tại: ".$turkis.$current_point.$t;
-			echo $putih."💎Tên Tài Khoản: ".$biru.$user.$putih."\n💎Level Vip Của Bạn: ".$turkis.$vip_level.$t;    
+			$tbase_point   = $ijo.$base_point.$putih;
+			if ($base_point < 0 )
+				$tbase_point   = $red.$base_point.$putih;
+			echo $putih."=======V=ò=n=g=Q=u=a=y=M=a=y=M=ắ=n=======\n➡️ Điểm thưởng: ".$ijo.$reward_point.$putih."\n➡️ Tổng điểm: ".$base_point."\n➡️ Tổng số điểm hiện tại: ".$turkis.$current_point.$t;
+			echo $putih."💎 Tên Tài Khoản: ".$biru.$user.$putih."\n💎 Level Vip Của Bạn: ".$turkis.$vip_level.$t;    
 	    } else {
 	        echo $red . "Thất Bại ! | " . $putih . "Mã Số: " . $kuning . $code . $t;
 	    }
