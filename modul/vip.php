@@ -40,7 +40,9 @@ while(true){
 	curl_setopt($ch,CURLOPT_POSTFIELDS,$jbody);
 	curl_setopt($ch,CURLOPT_ENCODING,"gzip");
 	$result=curl_exec($ch);
+	var_dump($result);
 	$info=curl_getinfo($ch);
+	var_dump($info);
 	curl_close($ch);
 	$js=json_decode($result,true);
 	$msg=$js["message"];
