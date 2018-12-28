@@ -1,11 +1,21 @@
 <?php
 date_default_timezone_set("Asia/Jakarta");
+$vdsvvt = "pink";
+$biru   = "[1;34m";
+$turkis = "[1;36m";
+$ijo    = "[92m";
+$putih  = "[1;37m";
+$pink   = "[1;35m";
+$red    = "[1;31m";
+$kuning = "[1;33m";
+$t      = "\n";
 
 $access_token = readline($putih . "[?] $turkis Token: ");
 
 function isRunning() {
 	$times = [
-		 [4, 11],
+		 [1, 5],
+		 [7, 11],
 		 [12, 16],
 		 [19, 22],
 	];
@@ -27,16 +37,6 @@ function isRunning() {
 	sleep($second2Sleep);
 	return true;
 }
-
-$vdsvvt = "pink";
-$biru   = "[1;34m";
-$turkis = "[1;36m";
-$ijo    = "[92m";
-$putih  = "[1;37m";
-$pink   = "[1;35m";
-$red    = "[1;31m";
-$kuning = "[1;33m";
-$t      = "\n";
 
 print $ijo . "\n__     _______ _____ _   _ \n\ \\   / / ____| ____| | | | " . $putih . "Phiên Bản: NEW" . $ijo . "\n \ \ / /|  _| |  _| | | | | " . $putih . "TOOL VIP" . $ijo . "\n  \ V / | |___| |___| |_| | " . $putih . "X3 Coin" . $ijo . "\n   \\_/  |_____|_____|\\___/ " . $t;
 echo $putih . "Bản Quyền: Group INDONESIA | Chỉnh sửa Phươngtt" . $t . $t;
