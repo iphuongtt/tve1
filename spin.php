@@ -5,7 +5,7 @@ require("config.php");
 function isRunning() {
 	$times = [
 		 [4, 11],
-		 [12, 16],
+		 [14, 16],
 		 [19, 22],
 	];
 	$hour = (int)date('H');
