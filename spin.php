@@ -5,7 +5,7 @@ require("config.php");
 function isRunning() {
 	$times = [
 		 [4, 11],
-		 [14, 16],
+		 [12, 16],
 		 [19, 22],
 	];
 	$hour = (int)date('H');
@@ -22,7 +22,6 @@ function isRunning() {
 		}
 	}
 	$minute2Sleep = ($min - 1)*60 + 60 - $minute;
-	echo $minute2Sleep;
 	$second2Sleep = $minute2Sleep * 60;
 	sleep($second2Sleep);
 	return true;
