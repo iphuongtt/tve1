@@ -43,6 +43,7 @@ while(true){
 	$info=curl_getinfo($ch);
 	curl_close($ch);
 	$js=json_decode($result,true);
+	var_dump($js);
 	$http=$info["http_code"];
 	if($js["code"]=="4040"){
 		$msg=$js["message"];
