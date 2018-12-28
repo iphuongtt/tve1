@@ -130,7 +130,7 @@ while (true) {
         CURLOPT_POST           => true,
         CURLOPT_POSTFIELDS     => $body3,
         CURLOPT_HTTPHEADER     => $header,
-        CURLOPT_ENCODING       => "gzip",
+        // CURLOPT_ENCODING       => "gzip",
         CURLOPT_SSL_VERIFYPEER => 0,
     ));
     $result_box = curl_exec($curl);
