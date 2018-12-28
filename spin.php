@@ -17,7 +17,7 @@ function isRunning() {
 			return true;
 		} else{
 			$delta = $time[0] - $hour;
-			if ($delta < $min)
+			if ($delta < $min && $delta > 0)
 				$min = $delta;
 		}
 	}
