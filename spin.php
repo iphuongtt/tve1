@@ -1,6 +1,7 @@
 <?php
 date_default_timezone_set("Asia/Jakarta");
-require("config.php");
+
+$access_token = readline($putih . "[?] $turkis Token: ");
 
 function isRunning() {
 	$times = [

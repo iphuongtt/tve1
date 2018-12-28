@@ -8,7 +8,7 @@ $pink   = "[1;35m";
 $red    = "[1;31m";
 $kuning = "[1;33m";
 $t      = "\n";
-require("config.php");
+$access_token = readline($putih . "[?] $turkis Token: ");
 print $ijo . "\n__     _______ _____ _   _ \n\ \\   / / ____| ____| | | | " . $putih . "Phiên Bản: NEW" . $ijo . "\n \ \ / /|  _| |  _| | | | | " . $putih . "TOOL VIP" . $ijo . "\n  \ V / | |___| |___| |_| | " . $putih . "X3 Coin" . $ijo . "\n   \\_/  |_____|_____|\\___/ " . $t;
 echo $putih . "Bản Quyền: Group INDONESIA | Chỉnh sửa Phươngtt" . $t . $t;
 $link    = "https://www.veeuapp.com/v1.0/incentive/tasks?access_token=" . $access_token;
