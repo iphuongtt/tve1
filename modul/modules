@@ -83,7 +83,7 @@ while (true) {
     $result = curl_exec($curl);
     curl_close($curl);
     $js = json_decode($result, true);
-    if ( isset($js["message"]) && $js["message"] == "complete full") {
+    if ( isset($js["message"]) && ($js["message"] == "complete full" || $js["message"] == "task invalid")) {
         echo $red . "[!] $putih Coin Xem Quảng Cáo: $red" . $js["message"] . "\n";
         sleep(1);
         break;
@@ -110,7 +110,7 @@ while (true) {
     curl_close($curl);
     $jmil = json_decode($resultm, true);
     var_dump($jmil);
-    if (isset($jmil["message"]) && $jmil["message"] == "complete full") {
+    if (isset($jmil["message"]) && ($jmil["message"] == "complete full" || $jmil["message"] == "task invalid")) {
         echo $red . "[!] $putih Coin Thưởng Thêm Khi Xem Video: $red" . $jmil["message"] . "\n";
         sleep(1);
         break;
@@ -137,7 +137,7 @@ while (true) {
     curl_close($curl);
     $jbox = json_decode($result_box, true);
     var_dump($jbox);
-    if ($jbox["message"] == "complete full") {
+    if (isset($jbox["message"]) && ($jbox["message"] == "complete full" || $jbox["message"] == "task invalid")) {
         echo $red . "[!] $putih Coin Mở Hộp Quà: $red" . $jbox["message"] . "\n";
         sleep(1);
         break;
