@@ -164,7 +164,7 @@ while (true) {
 			if ($base_point < 0 )
 				$tbase_point   = $red.$base_point.$putih;
 			echo $putih."=======V=ò=n=g=Q=u=a=y=M=a=y=M=ắ=n=======\n➡️ Tổng điểm: ".$tbase_point."\n➡️ Tổng số điểm hiện tại: ".$turkis.$current_point.$t;
-			echo $putih."\n💎 Level Vip Của Bạn: ".$turkis.$vip_level.$t;    
+			echo $putih."💎 Level Vip Của Bạn: ".$turkis.$vip_level.$t;    
 	    } else {
 	        echo $red . "Thất Bại ! | " . $putih . "Mã Số: " . $kuning . $code . $t;
 	    }
