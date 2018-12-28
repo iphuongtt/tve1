@@ -55,7 +55,7 @@ while(true){
 		$tpoin=$js["point"]["today_revenue_point"];
 		$total=$js["point"]["current_point"];
 		$vip=$js["point"]["vip_level"];
-		echo $putih."====T=r=i=ệ=u==P=h=ú==T=h=ẻ==C=à=o==============➡️Số coin / 1 Video: ".$ijo.$reward.$putih."\n➡️Số Coin Đã Kiểm Được Hôm Nay: ".$ijo.$tpoin.$putih."\n➡️Tổng Số Coin Hiện Tại: ".$turkis.$total.$t;
+		echo $putih."====T=r=i=ệ=u==P=h=ú==T=h=ẻ==C=à=o====\n➡️Số coin / 1 Video: ".$ijo.$reward.$putih."\n➡️Số Coin Đã Kiểm Được Hôm Nay: ".$ijo.$tpoin.$putih."\n➡️Tổng Số Coin Hiện Tại: ".$turkis.$total.$t;
 		echo $putih."💎Tên Tài Khoản: ".$biru.$user.$putih."\n💎Level Vip Của Bạn: ".$turkis.$vip.$line_break;
 	} else {
 		sleep(5);
