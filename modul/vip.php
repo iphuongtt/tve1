@@ -45,7 +45,7 @@ while(true){
 	$js=json_decode($result,true);
 	var_dump($js);
 	$http=$info["http_code"];
-	if($js["code"]=="4040"){
+	if(isset($js["code"]) && $js["code"]=="4040"){
 		$msg=$js["message"];
 		echo $red."[!] ".$putih."Bạn đã xem tất cả video kiếm tiền bây giờ bạn phải vào App Veeu Để Xem Qua 5 Video Nữa Bằng Tay Để Tránh Không Rút Được Tiền: ".$red.$msg.$putih.$t;
 		sleep(1);
