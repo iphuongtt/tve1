@@ -22,6 +22,7 @@ function isRunning() {
 		}
 	}
 	$minute2Sleep = ($min - 1)*60 + 60 - $minute;
+	echo $minute2Sleep;
 	$second2Sleep = $minute2Sleep * 60;
 	sleep($second2Sleep);
 	return true;
